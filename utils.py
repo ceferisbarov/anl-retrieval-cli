@@ -1,4 +1,5 @@
 import requests
+from PIL import Image
 
 BASE_URL = "http://web2.anl.az:81/read/page.php?zoom=0&"
 
@@ -11,3 +12,11 @@ def get_no_pages(book_id):
             page_count = line[idx+4:].strip("\";")
 
             return int(page_count)
+
+def is_jpg(file_path):
+    try:
+        Image.open(file_path)
+    except:
+        print(f"{file_path} not a jpeg!")
+        return False
+    return True
