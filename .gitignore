@@ -1,3 +1,4 @@
 temp/*
+!temp/.gitkeep
 out/*
 __pycache__/*
